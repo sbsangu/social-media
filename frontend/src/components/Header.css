@@ -1,0 +1,14 @@
+.Header>a{
+    color: gray;
+    font-size:large;
+    transition:all 0.2s;
+    height: 3vmax;
+   
+    
+
+}
+.Header>a:hover{
+    transform: scale(1.1);
+    
+
+}
