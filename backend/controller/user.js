@@ -8,6 +8,7 @@ import cloudinary from "cloudinary";
 export const register = async (req, res) => {
   try {
     const { name, email, password, avatar } = req.body;
+    
     let user = await userModel.findOne({ email });
 
     if (user) {
@@ -80,9 +81,9 @@ export const login = async (req, res) => {
       expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90),
 
       httpOnly: true,
-
-      sameSite: "none",
       secure: true,
+      sameSite: "none",
+      
     };
 
     res.status(200).cookie("token", token, options).send({
@@ -236,7 +237,6 @@ export const updateProfile = async (req, res) => {
         (user.avatar.url = myCloud.secure_url);
     }
 
-    //avatar to do
 
     await user.save();
     res.status(200).send({
@@ -497,7 +497,7 @@ export const getUserPosts = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await userModel.findById(id);
-    console.log(user.name);
+
     const posts = [];
     for (let i = 0; i < user.posts.length; i++) {
       const post = await postModel
@@ -505,8 +505,7 @@ export const getUserPosts = async (req, res) => {
         .populate("likes owner comments.user");
       posts.push(post);
     }
-    console.log(posts);
-
+ 
     return res.status(200).send({
       success: true,
       posts,

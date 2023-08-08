@@ -93,7 +93,7 @@ const Post = ({
   return (
     <>
       <Box
-        p={2}
+        
         display={"flex"}
         flexDirection={"column"}
         justifyContent="center"
@@ -225,7 +225,7 @@ const Post = ({
       </Dialog>
       <Box height={"80vh"} color="white">
       <Dialog sx={{overflowY:"auto", overflowX:"hidden" ,padding:"30px",height:"100%"}} open={commentToggle} onClose={() => setCommentToggle(!commentToggle)}>
-        <Typography sx={{alignSelf:"cenetr"}} p={4} alignSelf={'center'} variant="h5" width={"30vw"} marginBottom={1} >
+        <Typography sx={{alignSelf:"center"}} p={4} alignSelf={'center'} variant="h5" width={"30vw"} marginBottom={1} >
           {" "}
           Comments 
         </Typography>

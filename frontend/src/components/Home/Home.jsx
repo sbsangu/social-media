@@ -51,10 +51,11 @@ const Home = () => {
   return (
   
     loading===true || userLoading===true ? (<Loader />) : (
-      <Box  p={1} display={'flex'}>
-        <Stack sx={{
+      <Box p={1} display={'flex'}  >
+        <Stack p={2} sx={{
+          
             background :"linear-gradient(to right,#fff5bc,#cec1ff)",
-            height:"95vh",
+            height:"100vh",
             overflowY:"auto"
         }} width={'80vw'} >
        {
@@ -73,7 +74,7 @@ const Home = () => {
        {
         users && users.length>0 ? (
           users.map((user)=>(
-            <User  key={user._id} userId={user._id} name={user.name}  />
+            <User  key={user._id} userId={user._id} name={user.name}  avatar={user.avatar.url} />
           ))
         ):(
           <Typography variant='h6'>No User Yet</Typography>

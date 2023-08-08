@@ -30,6 +30,7 @@ const NewPost = () => {
         await dispatch(createNeWPost(caption,image))
         setImage('')
         setCaption('')
+        navigate("/")
        
     }
     // useEffect(() => {

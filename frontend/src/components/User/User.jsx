@@ -8,6 +8,8 @@ const User = ({ userId, name, avatar }) => {
     <Box mt={2}  justifyContent={"center"} display={"flex"}
       p={1}
       sx={{
+        overflowY:"hidden",
+        
         transition: "all 0.5s",
         "&:hover": {
           transform: "translateY(-10px)",
@@ -30,8 +32,8 @@ const User = ({ userId, name, avatar }) => {
             
             borderRadius: "80px",
             border: "2px solid pink",
-            width: "40px",
-            height: "40px",
+            width: "80px",
+            height: "80px",
           }}
         
         />

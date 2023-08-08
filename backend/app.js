@@ -3,8 +3,9 @@ import post from "./routes/post.js"
 import user from "./routes/user.js"
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import {config} from "dotenv"
 
-
+config();
 const app=express();
 //middlewares
 
@@ -15,12 +16,15 @@ app.use(express.urlencoded({ limit:'50mb',extended:true }))
 app.use(cookieParser())
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: process.env.FRONTEND_URL,
   credentials: true,
 }
 ));
 
  
+app.get("/", (req, res) => {
+  res.send(`<h1>Site is workin fine.click to get frontend</h1>`)
+})
 
 
 

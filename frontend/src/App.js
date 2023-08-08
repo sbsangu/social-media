@@ -37,7 +37,7 @@ function App() {
 
     
     dispatch({ type: "clearErrors" });
-  }, []);
+  }, [dispatch]);
  
  
  
@@ -47,7 +47,7 @@ function App() {
       <Router>
        <Header />
         <Routes>
-          <Route path={"/"} element={isAuthenticated ? <Home /> : <Loader/> } />
+          <Route path={"/"} element={isAuthenticated ? <Home /> : <Login/> } />
 
           {isAuthenticated && <Route path="/login" element={<Home />} />}
           <Route path="/login" element={<Login />} />

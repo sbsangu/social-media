@@ -3,6 +3,7 @@ import { likeReducers, myPostsReducer, userPostsReducer } from "./Reducers/Post"
 import {  postOfFollowingReducers, userReducer,allUserReducers, userProfileReducers} from "./Reducers/User";
 
 
+// export const server=`http://localhost:4000/api/v1`
  const store=configureStore({
     reducer:{
         user:userReducer,

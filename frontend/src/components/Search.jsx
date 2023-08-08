@@ -26,7 +26,7 @@ const Search = () => {
     mt={2}
     sx={{
       background: "linear-gradient(to right,#fff5bc,#cec1ff)",
-      height: "100vh",
+      height: "auto",
     }}>
     <Typography variant="h3" p={1} textAlign={"center"}>
       Social Apz
@@ -73,7 +73,7 @@ const Search = () => {
         </Button>
 
         { users &&  users.length>0 && users.map((user)=>(
-  <User key={user._id}  userId={user._id} name={user.name} avatar={user.avatar} />
+  <User key={user._id}  userId={user._id} name={user.name} avatar={user.avatar.url} />
 ))}
       </Box>
     </form>
