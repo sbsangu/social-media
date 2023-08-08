@@ -23,7 +23,7 @@ app.use(cors({
 
  
 app.get("/", (req, res) => {
-  res.send(`<h1>Site is workin fine.click ${process.env.FRONTEND_URL} to get frontend</h1>`)
+  res.send(`<h1>Site is workin fine.Click <a href=${process.env.FRONTEND_URL}>Here </a> to get frontend</h1>`)
 })
 
 
