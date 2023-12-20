@@ -8,7 +8,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     });
 
     const { data } = await axios.post(
-      `${process.env.REACT_APP_BACKEND}api/v1/login`,
+      `${process.env.REACT_APP_BACKEND}/api/v1/login`,
       { email, password },
       {
         headers: {
