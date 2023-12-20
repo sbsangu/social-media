@@ -54,9 +54,9 @@ toast.success(data.message)
     
   } catch (error) {
     dispatch({type:"RegisterFailure",
-    payload:error.response.data.message
+    payload:error.response
   })
-    toast.success(error.response.data.message)
+    // toast.success(error.response.data.message)
     dispatch({type:"clearErrors"})
   }
 
@@ -113,7 +113,7 @@ export const loadUser = () => async (dispatch) => {
     console.log(error);
     dispatch({
       type: "LoadUserFailure",
-      payload: error.response.data.message,
+      payload: error.response,
     });
   }
 };
@@ -135,7 +135,7 @@ export const getFollowingPosts=()=>async(dispatch)=>{
   } catch (error) {
     dispatch({
       type:"postOfFollowingFailure",
-      payload: error.response.data.message
+      payload: error.response
     })
   }
 }
@@ -157,7 +157,7 @@ export const getAllUsers=(name=" ")=>async(dispatch)=>{
   } catch (error) {
     dispatch({
       type:"allUsersFailure",
-      payload:error.response.data.message
+      payload:error.response
     })
   }
 }
@@ -182,7 +182,7 @@ export const getMyPosts=()=>async(dispatch)=>{
 
     dispatch({
       type:"myPostFailure",
-      payload:error.response.data.message
+      payload:error.response
     })
     
   }
@@ -245,7 +245,7 @@ export const forgotPassword=(email)=>async(dispatch)=>{
    
       dispatch({
           type:"deleteProfileFailure",
-          payload:error.response.data.message
+          payload:error.response
       })
       
   }
@@ -277,7 +277,7 @@ export const resetPassword=(token,password)=>async(dispatch)=>{
    
       dispatch({
           type:"resetPasswordFailure",
-          payload:error.response.data.message
+          payload:error.response
       })
       
   }
@@ -309,7 +309,7 @@ export const userPosts=(id)=>async(dispatch)=>{
 
     dispatch({
       type:"userPostsFailure",
-      payload:error.response.data.message
+      payload:error.response
     })
     
   }
@@ -336,7 +336,7 @@ export const userProfile=(id)=>async(dispatch)=>{
 
     dispatch({
       type:"userProfileFailure",
-      payload:error.response.data.message
+      payload:error.response
     })
     
   }
