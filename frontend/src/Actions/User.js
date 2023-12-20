@@ -8,7 +8,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     });
 
     const { data } = await axios.post(
-      `${process.env.REACT_APP_BACKEND}/api/v1/login`,
+      `${process.env.REACT_APP_BACKEND}api/v1/login`,
       { email, password },
       {
         headers: {
@@ -39,7 +39,7 @@ export const registerUser=( name, email, password ,avatar)=>async(dispatch)=>{
       type:"RegisterRequest"
     })
 
-    const {data}=await axios.post(`${process.env.REACT_APP_BACKEND}api/v1/register`,{avatar,name,email,password},{
+    const {data}=await axios.post(`${process.env.REACT_APP_BACKEND}/api/v1/register`,{avatar,name,email,password},{
       headers:{
         "Content-Type":"application/json"
       },
