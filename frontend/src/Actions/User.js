@@ -25,7 +25,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     });
     toast.success(data.message)
   } catch (error) {
-    
+    console.log(error.response);
     dispatch({
       type: "LoginFailure",
       payload: error.response.data.message,
